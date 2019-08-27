@@ -70,4 +70,9 @@ function largestOfFour(arr) {
     return "false";
   }
   
- console.log(confirmEnding("Connor", "n"));
+ // console.log(confirmEnding("Connor", "n"));
+
+ // usage of map
+ let arr = [4,5,6,7];
+ let newArr = arr.filter((a)=> a > 4);
+ console.log(newArr);
