@@ -96,8 +96,59 @@ function repeatStringNumTimes(str, num) {
      emptyArray.push(str);
     
   } 
-  console.log(emptyArray.join(""));
+  //console.log(emptyArray.join(""));
   
 }
 
 repeatStringNumTimes("abc", 3);
+
+//Truncate a string
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  if (str.length <= num) {
+    return str;
+  } else {
+    return str.substring(0,num) + '...';
+  }
+}
+//console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2));
+
+let romanNumber = "X";
+
+
+
+function findElement(arr, func) {
+ 
+  let num = 0;
+
+  console.log(arr.filter(f => func(f))[0]);
+  
+}
+
+//console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+ // sum all values between
+
+function sumAll(arr) {
+  let lastValue = arr[arr.length-1];
+  let firstvalue = arr[0];
+  let sum =0;
+  if(firstvalue < lastValue){
+  for(let i=arr[0]; i<=lastValue;i++){
+    sum +=i;
+    
+  }
+}
+else {
+  for(let i=lastValue; i<=arr[0];i++){
+    sum +=i;
+    
+  }
+}
+  console.log(sum);
+  
+  
+}
+
+sumAll([10, 5]);
