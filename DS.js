@@ -75,4 +75,29 @@ function largestOfFour(arr) {
  // usage of map
  let arr = [4,5,6,7];
  let newArr = arr.filter((a)=> a > 4);
- console.log(newArr);
+ //console.log(newArr);
+
+// Factorlize
+ function factorialize(num) {
+   let fact = 1;
+   if(num == 0)
+   return 1;
+   else
+  return fact = num * factorialize(num-1);
+}
+
+// console.log(factorialize(4));
+
+// Repeat a string 
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  let emptyArray =[];
+  for(let i=0;i<num;i++){
+     emptyArray.push(str);
+    
+  } 
+  console.log(emptyArray.join(""));
+  
+}
+
+repeatStringNumTimes("abc", 3);
