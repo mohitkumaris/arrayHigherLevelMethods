@@ -146,9 +146,41 @@ else {
     
   }
 }
-  console.log(sum);
+ // console.log(sum);
   
   
 }
 
 sumAll([10, 5]);
+
+// Anagrams
+// If one string uses same characters as other in any order , doesnt consider puntuations and exclaimation marks.
+function anagrams(string1,string2) {
+  let firstObj = {};
+  let secondObj = {};
+  let firstChar = string1.replace(" ","").split("");
+  let secondChar = string2.replace(" ","").split("");
+  
+  firstChar.forEach((element,index) => {
+    firstObj[element] = firstObj[element] + 1 | 1;
+  });
+  secondChar.forEach((element,index) => {
+    secondObj[element] = secondObj[element] + 1 | 1;
+   
+  });
+  
+  console.log(firstObj);
+  console.log(secondObj);
+  // let checkAnagram = Object.is(firstObj,secondObj);
+  // console.log(checkAnagram);
+  for(let ch in firstObj){
+    if(firstObj[ch] !== secondObj[ch]){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+}
+
+console.log(anagrams('rail safeeety','fairy tales'));
