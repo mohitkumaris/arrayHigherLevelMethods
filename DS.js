@@ -162,25 +162,28 @@ function anagrams(string1,string2) {
   let secondChar = string2.replace(" ","").split("");
   
   firstChar.forEach((element,index) => {
-    firstObj[element] = firstObj[element] + 1 | 1;
+    if(firstObj[element] === undefined){
+      firstObj[element] = 1;
+    }
+    else{
+      firstObj[element] =  firstObj[element] + 1;
+    }
+   
   });
   secondChar.forEach((element,index) => {
-    secondObj[element] = secondObj[element] + 1 | 1;
-   
+    if(secondObj[element] === undefined){
+      secondObj[element] = 1;
+    }
+    else{
+      secondObj[element] =  secondObj[element] + 1;
+    }   
   });
   
   console.log(firstObj);
   console.log(secondObj);
   // let checkAnagram = Object.is(firstObj,secondObj);
   // console.log(checkAnagram);
-  for(let ch in firstObj){
-    if(firstObj[ch] !== secondObj[ch]){
-      return false;
-    }
-    else{
-      return true;
-    }
-  }
+  
 }
 
 console.log(anagrams('rail safeeety','fairy tales'));
