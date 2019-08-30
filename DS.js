@@ -212,3 +212,5 @@ function anagramsSortSolution(first,second) {
 }
 
 console.log(anagramsSortSolution('rail safety','fairy taless'));
+
+
