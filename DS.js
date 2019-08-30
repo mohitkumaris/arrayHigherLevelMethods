@@ -211,6 +211,19 @@ function anagramsSortSolution(first,second) {
   
 }
 
-console.log(anagramsSortSolution('rail safety','fairy taless'));
+// console.log(anagramsSortSolution('rail safety','fairy taless'));
 
 
+// palindrome
+
+function checkPalindrome(str){
+   let charSplit = str.split("").reverse().join("");
+   if(str === charSplit){
+     return true;
+   }
+   else {
+     return false;
+   }
+}
+
+console.log(checkPalindrome('nitin'));
