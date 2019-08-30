@@ -153,7 +153,7 @@ else {
 
 sumAll([10, 5]);
 
-// Anagrams
+// Anagrams 1st Solution
 // If one string uses same characters as other in any order , doesnt consider puntuations and exclaimation marks.
 function anagrams(string1,string2) {
   let firstObj = {};
@@ -162,28 +162,53 @@ function anagrams(string1,string2) {
   let secondChar = string2.replace(" ","").split("");
   
   firstChar.forEach((element,index) => {
-    if(firstObj[element] === undefined){
-      firstObj[element] = 1;
-    }
-    else{
-      firstObj[element] =  firstObj[element] + 1;
-    }
-   
+    firstObj[element] = firstObj[element] + 1 || 1;
   });
   secondChar.forEach((element,index) => {
-    if(secondObj[element] === undefined){
-      secondObj[element] = 1;
-    }
-    else{
-      secondObj[element] =  secondObj[element] + 1;
-    }   
+    secondObj[element] = secondObj[element] + 1 || 1;
+   
   });
+  if(Object.keys(firstObj).length !== Object.keys(secondObj).length)
+  { 
+     return false;
+  }
+  for(let ch in firstObj){
+    if(firstObj[ch] !== secondObj[ch]){
+      return false;
+    }
+    
+  }
+  return true;
   
-  console.log(firstObj);
-  console.log(secondObj);
-  // let checkAnagram = Object.is(firstObj,secondObj);
-  // console.log(checkAnagram);
+  // console.log(firstObj);
+  // console.log(secondObj);
+  
   
 }
 
-console.log(anagrams('rail safeeety','fairy tales'));
+//console.log(anagrams('rail safety','fairy tales'));
+
+// Anagram 2nd Solution: The sorting way
+
+function anagramsSortSolution(first,second) {
+  let firstChar = first.replace(" ","").split("");
+  let secondChar = second.replace(" ","").split("");
+  let sorrtedFisrt = firstChar.sort();
+  let sorrtedSecond = secondChar.sort();
+  console.log(sorrtedFisrt);
+  console.log(sorrtedSecond);
+  if(sorrtedFisrt.length != sorrtedSecond.length){
+    return false;
+  }
+  for(let c of sorrtedFisrt){
+    if(sorrtedFisrt[c] === sorrtedSecond[c]){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  
+}
+
+console.log(anagramsSortSolution('rail safety','fairy taless'));
