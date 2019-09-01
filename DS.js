@@ -226,4 +226,65 @@ function checkPalindrome(str){
    }
 }
 
-console.log(checkPalindrome('nitin'));
+//console.log(checkPalindrome('nitin'));
+
+// reverse an int / modulo then divde then multiply
+function reverseInt(num) {
+  let number =0;
+  let x;
+  while(num > 0){
+   x = num % 10;
+   num = parseInt(num/10);
+   number = number*10 + x;
+  
+  }
+  //console.log(number);
+}
+//reverseInt(511);
+
+// max chars problem
+function Maxchars(str) {
+  let charObj = {};
+  let max = 0;
+  let maxChar = '';
+  let strArr = str.split("");
+  strArr.forEach((item)=>{
+     charObj[item] = charObj[item] + 1 || 1;
+     if(charObj[item] > max){
+       max = charObj[item];
+       maxChar = item;
+     }
+  });
+console.log(max);
+console.log(maxChar)
+}
+// Maxchars("abccccccc");
+
+ // Fizz buzz
+ function FiZZBuzz(n) {
+   for(let i=1; i<=n;i++){
+    if(i % 3 === 0 && i % 5 === 0){
+      console.log("fizzbuzz");
+    } 
+    else if(i % 3 === 0){
+       console.log("fizz");
+     }else if(i % 5 === 0){
+       console.log("buzz");
+       
+     }else{
+       console.log(i);
+     }
+   }
+ }
+ //FiZZBuzz(15);
+ // Array chunk 
+ function ArrayChunk(arr,size) {
+   let chunked = [];
+   let index = 0;
+   while(index < arr.length){
+     chunked.push(arr.slice(index,index + size));
+     index += size;
+   }
+   return chunked;
+ }
+ console.log(ArrayChunk([5,7,6,4,3,6,7],4));
