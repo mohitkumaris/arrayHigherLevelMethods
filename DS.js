@@ -287,4 +287,17 @@ console.log(maxChar)
    }
    return chunked;
  }
- console.log(ArrayChunk([5,7,6,4,3,6,7],4));
+ //console.log(ArrayChunk([5,7,6,4,3,6,7],4));
+
+ // Capitalize
+ function Capitalize(str) {
+   let arrstr = str.split(" ");
+   let finalArray = [];
+   for(let a of arrstr){
+     finalArray.push(a[0].toString().toUpperCase() + a.substring(1,a.length))
+
+   }
+   console.log(finalArray.join(" "))
+ }
+
+ Capitalize("a short sentence");
