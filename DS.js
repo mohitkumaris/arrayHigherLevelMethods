@@ -300,4 +300,31 @@ console.log(maxChar)
    console.log(finalArray.join(" "))
  }
 
- Capitalize("a short sentence");
+ //Capitalize("a short sentence");
+
+ function repeatedString(s, n) {
+   //console.log(s);
+  if (s.length === 1 && s.length === "a") {
+      return n;
+  }
+  if (s.indexOf("a") === -1) {
+      return 0;
+  }
+  let length = s.length;
+  let q = n / length;
+  let rem = n % length;
+  let substr = s.substring(0, q);
+  let charstr = substr.split("");
+  let counta = 0;
+  charstr.forEach((c) => {
+      if (c === "a"){
+          counta += 1;
+      }
+  })
+  console.log(counta);
+  let finalcounta = q * counta + rem;
+  console.log(finalcounta);
+  return parseInt(finalcounta);
+}
+
+console.log(repeatedString("gfcaaaecbg",547602));
